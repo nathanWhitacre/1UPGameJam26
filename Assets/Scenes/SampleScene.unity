@@ -339,7 +339,7 @@ Transform:
   m_GameObject: {fileID: 317063158}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0.01, y: 0.01, z: 10}
   m_LocalScale: {x: 1000, y: 1000, z: 1000}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -594,6 +594,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   humanPrefabs:
   - {fileID: 11400000, guid: ec99a8f9047f4507be4f013202804a93, type: 2}
+  - {fileID: 11400000, guid: 65d499baec2896f45b3e05bf529d5861, type: 2}
+  - {fileID: 11400000, guid: ec3c5cb89204a4a499368f00de2bcc5b, type: 2}
+  - {fileID: 11400000, guid: 181557572cb6eeb45bb1f179a941080f, type: 2}
+  - {fileID: 11400000, guid: 18500a64fef45804e95fa68deead4427, type: 2}
   minHumans: 11
   maxHumans: 25
   countExistingSceneHumans: 1

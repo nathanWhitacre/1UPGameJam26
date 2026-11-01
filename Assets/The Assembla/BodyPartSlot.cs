@@ -22,6 +22,7 @@ public class BodyPartSlot : MonoBehaviour
     public BodyPartType Type => type;
     public Sprite CurrentSprite => spriteRenderer.sprite;
     public SpriteRenderer Renderer => spriteRenderer;
+    public int SortingOrder => spriteRenderer.sortingOrder;
 
     private void Awake()
     {

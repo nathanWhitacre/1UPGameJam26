@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Suit Guy
   m_EditorClassIdentifier: 
   prefab: {fileID: 4263666199350124984, guid: bbf4a17cccc0de14e8c5508cbd663390, type: 3}
-  bodyPartDropChance: 0.5
+  bodyPartDropChance: 0.4
   bodyPartDrops:
   - sprite: {fileID: 21300000, guid: 39cc61db1a2a9d3478dec1322cb55e24, type: 3}
     type: 2
@@ -27,3 +27,5 @@ MonoBehaviour:
     type: 5
   - sprite: {fileID: 21300000, guid: 407380d46fb8aeb488c06c97db985881, type: 3}
     type: 4
+  - sprite: {fileID: 21300000, guid: 12a82787b786e3f45972e1066377c1ed, type: 3}
+    type: 6
