@@ -308,7 +308,7 @@ MonoBehaviour:
   health: {fileID: 4263666199350124984}
   fullHealthSprite: {fileID: 21300000, guid: f589d27ac8ccedf47a7f6bd2e7c2ef8e, type: 3}
   fullHealthScale: 0.055
-  lowHealthThreshold: 0.25
+  lowHealthThreshold: 0.35
   lowHealthSprite: {fileID: 21300000, guid: 27b3efc94afad65469e43fabc0ededf7, type: 3}
   lowHealthScale: 0.5
   lowHealthSound: {fileID: 722099477564252172}
