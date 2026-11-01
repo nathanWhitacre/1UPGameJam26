@@ -69,6 +69,7 @@ public class BodyPartPickup : MonoBehaviour
         {
             flying = true;
             flyStart = transform.position;
+            PlayerID.Instance.PlaySlurp();
         }
 
         Vector3 target = PlayerID.Instance.transform.position;
@@ -89,6 +90,7 @@ public class BodyPartPickup : MonoBehaviour
 
         sequence.Stop();
         BodyPartInventory.Add(part);
+        //PlayerID.Instance.PlaySlurp();
         Destroy(gameObject);
     }
 
