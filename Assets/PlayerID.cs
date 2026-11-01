@@ -1,7 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerID : MonoBehaviour
 {
+    [SerializeField] private AudioSource slurpSound;
 
     public static PlayerID Instance;
 
@@ -36,5 +38,17 @@ public class PlayerID : MonoBehaviour
             BodyPartInventory.FinishRun();
             ScreenFader.LoadScene(assemblySceneName);
         }
+    }
+
+    public void PlaySlurp()
+    {
+        //slurpSound.PlayOneShot(slurpSound.clip);
+        StartCoroutine(SlurpDelay());
+    }
+
+    private IEnumerator SlurpDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        slurpSound.PlayOneShot(slurpSound.clip);
     }
 }
