@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meatValue: 100
-  maxHealth: 500
+  maxHealth: 400
   currentHealth: 0
   humanData: {fileID: 11400000, guid: ec99a8f9047f4507be4f013202804a93, type: 2}
   bodyPartPickupPrefab: {fileID: 7986404004610171581, guid: b232125c237e4f9eac2aa64ae8ad4050, type: 3}
