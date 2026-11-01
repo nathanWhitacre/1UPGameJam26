@@ -1,6 +1,8 @@
 using PrimeTween;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.ParticleSystem;
 
 public class AssemblyCompleter : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class AssemblyCompleter : MonoBehaviour
     [SerializeField] private Vector2 mirrorOffset = Vector2.zero;
     [SerializeField] private float mirrorDuration = 1f;
     [SerializeField] private Ease mirrorEase = Ease.OutCubic;
+    [SerializeField] private GameObject playAgain;
+    [SerializeField] private GameObject quit;
+    [SerializeField] private ParticleSystem particle;
 
     private Tween mirrorTween;
     private bool completed;
@@ -18,6 +23,8 @@ public class AssemblyCompleter : MonoBehaviour
     private void Awake()
     {
         if (completeButton != null) completeButton.onClick.AddListener(Complete);
+        if (playAgain != null) playAgain.GetComponent<Button>().onClick.AddListener(PlayAgain);
+        if (quit != null) quit.GetComponent<Button>().onClick.AddListener(Quit);
     }
 
     public void Complete()
@@ -33,6 +40,28 @@ public class AssemblyCompleter : MonoBehaviour
         Vector3 target = GetSkeletonCenter() + (Vector3)mirrorOffset;
         target.z = mirror.position.z;
         mirrorTween = Tween.Position(mirror, target, mirrorDuration, mirrorEase);
+        StartCoroutine(EnableButtons(mirrorDuration));
+    }
+
+    IEnumerator EnableButtons(float duration)
+    {
+        completeButton.gameObject.SetActive(false);
+        yield return new WaitForSeconds(duration);
+
+        particle.Play();
+
+        playAgain.SetActive(true);
+        quit.SetActive(true);
+    }
+
+    public void PlayAgain()
+    {
+        ScreenFader.Instance.FadeToScene("SampleScene");
+    }
+
+    public void Quit()
+    {
+        ScreenFader.Instance.FadeToScene("TitleScene");
     }
 
     private Vector3 GetSkeletonCenter()
