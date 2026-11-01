@@ -55,6 +55,10 @@ public class PlayerID : MonoBehaviour
         if (timeToSuck <= 0f && !loadingAssembly)
         {
             loadingAssembly = true;
+
+            PlayerPrefs.SetFloat("LatestScore", meatSucked);
+            if (meatSucked > PlayerPrefs.GetFloat("HighScore", 0f)) PlayerPrefs.SetFloat("HighScore", meatSucked);
+
             BodyPartInventory.FinishRun();
             ScreenFader.LoadScene(assemblySceneName);
         }

@@ -32,6 +32,11 @@ public class PlayTitle : MonoBehaviour
             playing = true;
             StartCoroutine(PlayCoroutine());
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     private IEnumerator PlayCoroutine()
