@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Construction Guy
   m_EditorClassIdentifier: 
   prefab: {fileID: 4263666199350124984, guid: b115fef1e96c5ca478c6e0a4c500edd7, type: 3}
-  bodyPartDropChance: 0.4
+  bodyPartDropChance: 0.45
   bodyPartDrops:
   - sprite: {fileID: 21300000, guid: 80f5a9a7986f5ef44b5b74cee5c887c3, type: 3}
     type: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ivan
   m_EditorClassIdentifier: 
   prefab: {fileID: 4263666199350124984, guid: 5d64c42d7bc9169418f0b5dc4b813132, type: 3}
-  bodyPartDropChance: 0.4
+  bodyPartDropChance: 0.45
   bodyPartDrops:
   - sprite: {fileID: 21300000, guid: 849a69a6dc2cc5e4094d663f963f0f71, type: 3}
     type: 0
