@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d25fd434be0145869965d5076c699056, type: 3}
+  m_Name: Nathan
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4263666199350124984, guid: 0ada8159a5680854697d76148c181c9d, type: 3}
+  bodyPartDropChance: 0.4
+  bodyPartDrops:
+  - sprite: {fileID: 21300000, guid: a8fd9173004382d4aae3a6253c6e69c2, type: 3}
+    type: 0
+  - sprite: {fileID: 21300000, guid: 71d48377f5c556546b867565855874ed, type: 3}
+    type: 3
+  - sprite: {fileID: 21300000, guid: ec10fce7a504971479c6e81609c5abb3, type: 3}
+    type: 2
+  - sprite: {fileID: 21300000, guid: 2a033dc3af36a03418081f61d7984ce5, type: 3}
+    type: 4
+  - sprite: {fileID: 21300000, guid: b434cf1d7802f684eab58a1ee76bff2d, type: 3}
+    type: 5
+  - sprite: {fileID: 21300000, guid: bf8df563250970149bbfd3586966dfc8, type: 3}
+    type: 1

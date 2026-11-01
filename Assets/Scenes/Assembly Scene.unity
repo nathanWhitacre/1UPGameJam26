@@ -1120,29 +1120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 648872963}
   worldCamera: {fileID: 1524914642}
-  startingParts:
-  - sprite: {fileID: 21300000, guid: 39cc61db1a2a9d3478dec1322cb55e24, type: 3}
-    type: 2
-  - sprite: {fileID: 21300000, guid: 938db0b0c79067441a3bdab3da59deaf, type: 3}
-    type: 3
-  - sprite: {fileID: 21300000, guid: 54204dfce572a234b957508f15ed18c7, type: 3}
-    type: 1
-  - sprite: {fileID: 21300000, guid: 34104b5caf868364ebaf657122e3ae47, type: 3}
-    type: 0
-  - sprite: {fileID: 21300000, guid: 7672f84ced9a82a4eabe8f9663cbf765, type: 3}
-    type: 5
-  - sprite: {fileID: 21300000, guid: 407380d46fb8aeb488c06c97db985881, type: 3}
-    type: 4
-  - sprite: {fileID: 21300000, guid: 200230fa53a3a4543b22f692a340add6, type: 3}
-    type: 0
-  - sprite: {fileID: 21300000, guid: b28eee38e3444f74f995bf00744f100b, type: 3}
-    type: 2
-  - sprite: {fileID: 21300000, guid: 7fcede7e905f2f044a0a0dc17e1cb7bd, type: 3}
-    type: 3
-  - sprite: {fileID: 21300000, guid: 80f5a9a7986f5ef44b5b74cee5c887c3, type: 3}
-    type: 1
-  - sprite: {fileID: 21300000, guid: 12a82787b786e3f45972e1066377c1ed, type: 3}
-    type: 6
+  startingParts: []
   returnReplacedToTray: 1
   dropPadding: 0.35
   tray: {fileID: 1900000012}
