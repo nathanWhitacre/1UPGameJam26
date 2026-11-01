@@ -5,5 +5,6 @@ public enum BodyPartType
     ArmLeft,
     ArmRight,
     LegLeft,
-    LegRight
+    LegRight,
+    Misc
 }

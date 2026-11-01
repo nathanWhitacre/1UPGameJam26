@@ -15,6 +15,9 @@ public class BodyPartAssembler : MonoBehaviour
     [SerializeField] private RectTransform trayContent;
     [SerializeField] private BodyPartCard cardPrefab;
 
+    [Header("Misc")]
+    [SerializeField] private int miscSortingOrder = 10;
+
     [Header("Drag")]
     [SerializeField] private int ghostSortingOrder = 100;
     [SerializeField] private Color ghostColor = new Color(1f, 1f, 1f, 0.9f);
@@ -44,7 +47,7 @@ public class BodyPartAssembler : MonoBehaviour
     {
         draggedCard = card;
 
-        BodyPartSlot match = FindMatchingSlot(card.Type);
+        BodyPartSlot match = card.Type == BodyPartType.Misc ? (slots.Count > 0 ? slots[0] : null) : FindMatchingSlot(card.Type);
         ghost.transform.localScale = match != null ? match.transform.lossyScale : Vector3.one;
         if (match != null) ghost.sharedMaterial = match.Renderer.sharedMaterial;
         ghost.sprite = card.Sprite;
@@ -67,12 +70,14 @@ public class BodyPartAssembler : MonoBehaviour
         }
 
         BodyPartSlot hovered = IsOverTray(screenPosition) ? null : FindSlotAt(screenPosition, draggedCard.Type);
+        bool misc = draggedCard.Type == BodyPartType.Misc;
         foreach (BodyPartSlot slot in slots)
         {
+            bool fits = misc || slot.Type == draggedCard.Type;
             if (slot == hovered)
-                slot.SetHighlight(slot.Type == draggedCard.Type ? BodyPartHighlight.Hover : BodyPartHighlight.Wrong);
+                slot.SetHighlight(fits ? BodyPartHighlight.Hover : BodyPartHighlight.Wrong);
             else
-                slot.SetHighlight(slot.Type == draggedCard.Type ? BodyPartHighlight.Hint : BodyPartHighlight.None);
+                slot.SetHighlight(fits && !misc ? BodyPartHighlight.Hint : BodyPartHighlight.None);
         }
     }
 
@@ -82,6 +87,8 @@ public class BodyPartAssembler : MonoBehaviour
 
         BodyPartCard card = draggedCard;
         draggedCard = null;
+        Vector3 ghostPosition = ghost.transform.position;
+        Vector3 ghostScale = ghost.transform.localScale;
         ghost.gameObject.SetActive(false);
 
         foreach (BodyPartSlot slot in slots) slot.SetHighlight(BodyPartHighlight.None);
@@ -89,7 +96,16 @@ public class BodyPartAssembler : MonoBehaviour
         if (IsOverTray(screenPosition)) return;
 
         BodyPartSlot target = FindSlotAt(screenPosition, card.Type);
-        if (target == null || target.Type != card.Type) return;
+        if (target == null) return;
+
+        if (card.Type == BodyPartType.Misc)
+        {
+            PlaceMisc(card.Sprite, target, ghostPosition, ghostScale);
+            Destroy(card.gameObject);
+            return;
+        }
+
+        if (target.Type != card.Type) return;
 
         Sprite old = target.Attach(card.Sprite);
         Destroy(card.gameObject);
@@ -106,9 +122,22 @@ public class BodyPartAssembler : MonoBehaviour
         {
             if (!slot.Contains(worldPoint, dropPadding)) continue;
             if (slot.Type == preferred) return slot;
-            if (fallback == null) fallback = slot;
+            if (fallback == null || slot.SortingOrder > fallback.SortingOrder) fallback = slot;
         }
         return fallback;
+    }
+
+    private void PlaceMisc(Sprite sprite, BodyPartSlot target, Vector3 position, Vector3 scale)
+    {
+        GameObject miscObject = new GameObject(sprite.name, typeof(SpriteRenderer));
+        SpriteRenderer miscRenderer = miscObject.GetComponent<SpriteRenderer>();
+        miscRenderer.sprite = sprite;
+        miscRenderer.sharedMaterial = target.Renderer.sharedMaterial;
+        miscRenderer.sortingOrder = miscSortingOrder;
+
+        miscObject.transform.SetPositionAndRotation(position, Quaternion.identity);
+        miscObject.transform.localScale = scale;
+        miscObject.transform.SetParent(target.transform, true);
     }
 
     private BodyPartSlot FindMatchingSlot(BodyPartType type)
