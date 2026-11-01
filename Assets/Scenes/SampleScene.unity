@@ -599,10 +599,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 181557572cb6eeb45bb1f179a941080f, type: 2}
   - {fileID: 11400000, guid: 18500a64fef45804e95fa68deead4427, type: 2}
   minHumans: 11
-  maxHumans: 25
+  maxHumans: 50
   countExistingSceneHumans: 1
-  minSpawnTime: 1
-  maxSpawnTime: 5
+  minSpawnTime: 0.5
+  maxSpawnTime: 2.5
   spawnRateTweenDuration: 0.5
   minSpawnRadius: 5
   maxSpawnRadius: 10
