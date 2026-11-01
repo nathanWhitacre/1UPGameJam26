@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d25fd434be0145869965d5076c699056, type: 3}
+  m_Name: Suit Guy
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4263666199350124984, guid: bbf4a17cccc0de14e8c5508cbd663390, type: 3}
+  bodyPartDropChance: 0.5
+  bodyPartDrops:
+  - sprite: {fileID: 21300000, guid: 39cc61db1a2a9d3478dec1322cb55e24, type: 3}
+    type: 2
+  - sprite: {fileID: 21300000, guid: 938db0b0c79067441a3bdab3da59deaf, type: 3}
+    type: 3
+  - sprite: {fileID: 21300000, guid: 54204dfce572a234b957508f15ed18c7, type: 3}
+    type: 1
+  - sprite: {fileID: 21300000, guid: 34104b5caf868364ebaf657122e3ae47, type: 3}
+    type: 0
+  - sprite: {fileID: 21300000, guid: 7672f84ced9a82a4eabe8f9663cbf765, type: 3}
+    type: 5
+  - sprite: {fileID: 21300000, guid: 407380d46fb8aeb488c06c97db985881, type: 3}
+    type: 4

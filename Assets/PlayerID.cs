@@ -9,9 +9,13 @@ public class PlayerID : MonoBehaviour
     public float timeSuckin = 0f;
     public float timeToSuck = 45f;
 
+    [SerializeField] private string assemblySceneName = "Assembly Scene";
+    private bool loadingAssembly = false;
+
     private void Awake()
     {
         Instance = this;
+        BodyPartInventory.StartRun();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,5 +29,12 @@ public class PlayerID : MonoBehaviour
     {
         timeToSuck -= Time.deltaTime;
         timeSuckin += Time.deltaTime;
+
+        if (timeToSuck <= 0f && !loadingAssembly)
+        {
+            loadingAssembly = true;
+            BodyPartInventory.FinishRun();
+            ScreenFader.LoadScene(assemblySceneName);
+        }
     }
 }
