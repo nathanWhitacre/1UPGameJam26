@@ -1304,6 +1304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Screen Fader
       objectReference: {fileID: 0}
+    - target: {fileID: 7288536481533917196, guid: e1e49a23af2d490287fa78530d39225f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
