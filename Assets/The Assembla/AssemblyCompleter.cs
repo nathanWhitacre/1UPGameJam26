@@ -1,5 +1,6 @@
 using PrimeTween;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.ParticleSystem;
@@ -16,6 +17,9 @@ public class AssemblyCompleter : MonoBehaviour
     [SerializeField] private GameObject playAgain;
     [SerializeField] private GameObject quit;
     [SerializeField] private ParticleSystem particle;
+
+    [SerializeField] private TextMeshProUGUI meatSuckedText;
+    [SerializeField] private TextMeshProUGUI peakMeatText;
 
     private Tween mirrorTween;
     private bool completed;
@@ -52,6 +56,11 @@ public class AssemblyCompleter : MonoBehaviour
 
         playAgain.SetActive(true);
         quit.SetActive(true);
+
+        meatSuckedText.text = "Meat Sucked:\n" + PlayerPrefs.GetFloat("LatestScore", 0f);
+        meatSuckedText.gameObject.SetActive(true);
+        peakMeatText.text = "Biggest Suck:\n" + PlayerPrefs.GetFloat("HighScore", 0f);
+        peakMeatText.gameObject.SetActive(true);
     }
 
     public void PlayAgain()
