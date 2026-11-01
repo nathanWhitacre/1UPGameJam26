@@ -27,7 +27,7 @@ public class HumanMeatSuckSpriteSuckManagerSucker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health.GetHealthRatio() < 0.75f && isFullHealth)
+        if (health.GetHealthRatio() < 0.5f && isFullHealth)
         {
             isFullHealth = false;
             isLowHealth = true;
