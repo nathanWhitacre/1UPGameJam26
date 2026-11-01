@@ -20,8 +20,8 @@ public class SweetSweetMeatSweetMeat : MonoBehaviour
     {
         meatSuckedText.text = "Meat Sucked:\n" + player.meatSucked.ToString();
 
-        timeSuckinText.text = "Time Suckin:\n" + Mathf.FloorToInt(player.timeSuckin).ToString() + "s";
+        timeSuckinText.text = "Time Suckin:\n" + Mathf.FloorToInt(player.timeSuckin).ToString() + " s";
 
-        timeToSuckText.text = "Time to Suck!\n" + Mathf.FloorToInt(player.timeToSuck).ToString() + "s";
+        timeToSuckText.text = "Time to Suck!\n" + Mathf.FloorToInt(player.timeToSuck).ToString();
     }
 }

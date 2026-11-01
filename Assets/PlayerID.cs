@@ -4,6 +4,9 @@ using UnityEngine;
 public class PlayerID : MonoBehaviour
 {
     [SerializeField] private AudioSource slurpSound;
+    [SerializeField] private AudioSource startBell;
+    [SerializeField] private AudioSource loopBell;
+    [SerializeField] private AudioSource endBell;
 
     public static PlayerID Instance;
 
@@ -13,6 +16,9 @@ public class PlayerID : MonoBehaviour
 
     [SerializeField] private string assemblySceneName = "Assembly Scene";
     private bool loadingAssembly = false;
+
+    private bool lowOnTime = false;
+    private bool noTime = false;
 
     private void Awake()
     {
@@ -30,7 +36,21 @@ public class PlayerID : MonoBehaviour
     void Update()
     {
         timeToSuck -= Time.deltaTime;
+        timeToSuck = Mathf.Max(timeToSuck, 0f);
         timeSuckin += Time.deltaTime;
+
+        if (timeToSuck <= 6f && !lowOnTime)
+        {
+            lowOnTime = true;
+            startBell.Play();
+            StartCoroutine(BellTolls());
+        }
+
+        if (timeToSuck <= 1f && !noTime)
+        {
+            noTime = true;
+            endBell.Play();
+        }
 
         if (timeToSuck <= 0f && !loadingAssembly)
         {
@@ -42,7 +62,6 @@ public class PlayerID : MonoBehaviour
 
     public void PlaySlurp()
     {
-        //slurpSound.PlayOneShot(slurpSound.clip);
         StartCoroutine(SlurpDelay());
     }
 
@@ -50,5 +69,14 @@ public class PlayerID : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         slurpSound.PlayOneShot(slurpSound.clip);
+    }
+
+    private IEnumerator BellTolls()
+    {
+        while (true)
+        {
+            loopBell.PlayOneShot(loopBell.clip);
+            yield return new WaitForSeconds(1f);
+        }
     }
 }
