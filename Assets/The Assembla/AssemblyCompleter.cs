@@ -20,6 +20,7 @@ public class AssemblyCompleter : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI meatSuckedText;
     [SerializeField] private TextMeshProUGUI peakMeatText;
+    [SerializeField] private AudioSource confettiSound;
 
     private Tween mirrorTween;
     private bool completed;
@@ -53,6 +54,7 @@ public class AssemblyCompleter : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         particle.Play();
+        confettiSound.Play();
 
         playAgain.SetActive(true);
         quit.SetActive(true);
