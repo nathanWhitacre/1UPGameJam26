@@ -59,9 +59,9 @@ public class AssemblyCompleter : MonoBehaviour
         playAgain.SetActive(true);
         quit.SetActive(true);
 
-        meatSuckedText.text = "Meat Sucked:\n" + PlayerPrefs.GetFloat("LatestScore", 0f);
+        meatSuckedText.text = "Score:\n" + PlayerPrefs.GetFloat("LatestScore", 0f);
         meatSuckedText.gameObject.SetActive(true);
-        peakMeatText.text = "Biggest Suck:\n" + PlayerPrefs.GetFloat("HighScore", 0f);
+        peakMeatText.text = "High Score:\n" + PlayerPrefs.GetFloat("HighScore", 0f);
         peakMeatText.gameObject.SetActive(true);
     }
 

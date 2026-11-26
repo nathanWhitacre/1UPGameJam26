@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time Suckin:
+  m_text: 'Time:
 
     {0}s'
   m_isRightToLeft: 0
@@ -1472,7 +1472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time to Suck!
+  m_text: 'Time to Uslurp!
 
     {0}s'
   m_isRightToLeft: 0
@@ -1660,7 +1660,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Meat Sucked:
+  m_text: 'Score:
 
     {0}'
   m_isRightToLeft: 0

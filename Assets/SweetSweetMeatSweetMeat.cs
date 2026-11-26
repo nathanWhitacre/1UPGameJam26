@@ -18,10 +18,10 @@ public class SweetSweetMeatSweetMeat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        meatSuckedText.text = "Meat Sucked:\n" + player.meatSucked.ToString();
+        meatSuckedText.text = "Score:\n" + player.meatSucked.ToString();
 
-        timeSuckinText.text = "Time Suckin:\n" + Mathf.FloorToInt(player.timeSuckin).ToString() + " s";
+        timeSuckinText.text = "Time:\n" + Mathf.FloorToInt(player.timeSuckin).ToString() + " s";
 
-        timeToSuckText.text = "Time to Suck!\n" + Mathf.FloorToInt(player.timeToSuck).ToString();
+        timeToSuckText.text = "Time to Uslurp!\n" + Mathf.FloorToInt(player.timeToSuck).ToString();
     }
 }
